@@ -13,7 +13,7 @@ let rec rev (l: 'a list) : 'a list =
         | [] -> []
         | head::tail -> (rev tail) @ [head]
 
-let rec parse (): 'int list =
+let parse (): 'int list =
         rev (_parse ())
 
 let rec _apply (base: int) (l: 'int list) (set ): int =
