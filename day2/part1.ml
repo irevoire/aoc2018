@@ -4,17 +4,17 @@ let rec count (c: 'a) (l: 'a list): int =
         match l with
         | [] -> 0
         | head::tail when head = c -> 1 + (count c tail)
-        | head::tail -> count c tail
+        | _::tail -> count c tail
 
 let rec _contains_n (alphabet: 'char list) (l: 'char list) (n: int): bool =
         match alphabet with
         | [] -> false
-        | head::tail when count head l = n -> true
-        | head::tail -> _contains_n tail l n
+        | head::_ when count head l = n -> true
+        | _::tail -> _contains_n tail l n
 
-let contains_n = fun l n -> _contains_n alphabet l n;;
-let two = fun l -> contains_n l 2;;
-let three = fun l -> contains_n l 3;;
+let contains_n l n = _contains_n alphabet l n;;
+let two l = contains_n l 2;;
+let three l = contains_n l 3;;
 
 let explode (s: string): 'char list =
         List.init (String.length s) (String.get s)
