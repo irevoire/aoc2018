@@ -17,7 +17,7 @@ fn sub_checksum(input: &str) -> (bool, bool) {
 }
 
 fn main() {
-    let checksum = parser::lines_from_args(1)
+    let checksum = parser::lines::<String>()
         .map(|line| sub_checksum(&line))
         .fold((0, 0), |checksum, (twos, threes)| {
             (checksum.0 + twos as usize, checksum.1 + threes as usize)

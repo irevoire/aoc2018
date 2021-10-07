@@ -2,7 +2,8 @@ use aoc::parser;
 
 /// return the number of letters in common between the two word + a string containing these letters
 fn letter_in_common(base: &str, cmp: &str) -> (usize, String) {
-    let result = base.chars()
+    let result = base
+        .chars()
         .zip(cmp.chars())
         .filter_map(|(base, cmp)| (base == cmp).then(|| base))
         .collect::<String>();
@@ -11,7 +12,7 @@ fn letter_in_common(base: &str, cmp: &str) -> (usize, String) {
 }
 
 fn main() {
-    let box_ids = parser::lines_from_args(1).collect::<Vec<_>>();
+    let box_ids = parser::lines().collect::<Vec<String>>();
 
     for (idx, base_id) in box_ids.iter().enumerate() {
         for cmp_id in box_ids.iter().skip(idx + 1) {

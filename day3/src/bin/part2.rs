@@ -2,7 +2,7 @@ use day3::Claim;
 use std::collections::HashMap;
 
 fn main() {
-    let input = aoc::parser::lines_from_args_as::<Claim>(1).collect::<Vec<_>>();
+    let input = aoc::parser::lines::<Claim>().collect::<Vec<_>>();
 
     let map = input
         .iter()

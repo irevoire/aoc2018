@@ -2,7 +2,7 @@ use day3::Claim;
 use std::collections::HashMap;
 
 fn main() {
-    let result = aoc::parser::lines_from_args_as::<Claim>(1)
+    let result = aoc::parser::lines::<Claim>()
         .flat_map(|claim| claim.start.to(claim.end).unwrap())
         .fold(HashMap::new(), |mut map, point| {
             *map.entry(point).or_insert(0) += 1;

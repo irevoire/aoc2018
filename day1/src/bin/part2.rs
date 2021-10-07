@@ -1,7 +1,7 @@
 use std::collections::HashSet;
 
 fn main() {
-    let input = aoc::parser::lines_from_args_as(1).collect::<Vec<i32>>();
+    let input = aoc::parser::lines().collect::<Vec<i32>>();
     let result = input
         .iter()
         .cycle()
