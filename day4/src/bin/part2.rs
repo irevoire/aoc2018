@@ -3,10 +3,10 @@ fn main() {
 
     let (guard, schedule) = map
         .iter()
-        .max_by_key(|(_id, sleep)| sleep.into_iter().max().unwrap())
+        .max_by_key(|(_id, sleep)| sleep.iter().max().unwrap())
         .unwrap();
     let minute = schedule
-        .into_iter()
+        .iter()
         .enumerate()
         .max_by_key(|(_idx, &minute)| minute)
         .unwrap()

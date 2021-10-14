@@ -102,7 +102,7 @@ pub fn parse() -> HashMap<Id, Schedule> {
             }
             State::Begin(id) => Some(Some(std::mem::replace(guard, Guard::new(id)))),
         })
-        .filter_map(|guard| guard)
+        .flatten()
         .fold(HashMap::new(), |mut map, guard| {
             map.entry(guard.id)
                 .or_insert([0; 60])
