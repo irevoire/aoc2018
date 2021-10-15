@@ -22,7 +22,7 @@ fn main() {
             (checksum.0 + twos as usize, checksum.1 + threes as usize)
         });
     answer!(
-        "The checksum of your list of box ids is {}",
+        "The checksum of your list of box ids is {}.",
         checksum.0 * checksum.1
     );
 }

@@ -14,5 +14,8 @@ fn main() {
         .find(|(condition, _)| *condition)
         .unwrap();
 
-    answer!("Frequency: {}", result.1);
+    answer!(
+        "The first frequency your device reaches twice is {}",
+        result.1
+    );
 }

@@ -18,7 +18,11 @@ fn main() {
         for cmp_id in box_ids.iter().skip(idx + 1) {
             let (nb, result) = letter_in_common(base_id, cmp_id);
             if nb == 1 {
-                answer!("{}", result);
+                answer!(
+                    "{} are the letters in common between the two correct box IDs.",
+                    result
+                );
+                return;
             }
         }
     }
