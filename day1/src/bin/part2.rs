@@ -1,7 +1,8 @@
+use aoc::*;
 use std::collections::HashSet;
 
 fn main() {
-    let input = aoc::parser::lines().collect::<Vec<i32>>();
+    let input = parser::lines().collect::<Vec<i32>>();
     let result = input
         .iter()
         .cycle()
@@ -13,5 +14,5 @@ fn main() {
         .find(|(condition, _)| *condition)
         .unwrap();
 
-    println!("Frequency: {}", result.1);
+    answer!("Frequency: {}", result.1);
 }

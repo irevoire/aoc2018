@@ -1,6 +1,5 @@
+use aoc::*;
 use std::collections::HashMap;
-
-use aoc::parser;
 
 fn sub_checksum(input: &str) -> (bool, bool) {
     let map = input
@@ -22,7 +21,7 @@ fn main() {
         .fold((0, 0), |checksum, (twos, threes)| {
             (checksum.0 + twos as usize, checksum.1 + threes as usize)
         });
-    println!(
+    answer!(
         "The checksum of your list of box ids is {}",
         checksum.0 * checksum.1
     );

@@ -1,8 +1,9 @@
+use aoc::*;
 use day3::Claim;
 use std::collections::HashMap;
 
 fn main() {
-    let input = aoc::parser::lines::<Claim>().collect::<Vec<_>>();
+    let input = parser::lines::<Claim>().collect::<Vec<_>>();
 
     let map = input
         .iter()
@@ -24,7 +25,7 @@ fn main() {
         .unwrap()
         .id;
 
-    println!(
+    answer!(
         "There is {} square inches of fabric that are within two or more claims",
         result
     );

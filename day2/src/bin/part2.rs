@@ -1,4 +1,4 @@
-use aoc::parser;
+use aoc::*;
 
 /// return the number of letters in common between the two word + a string containing these letters
 fn letter_in_common(base: &str, cmp: &str) -> (usize, String) {
@@ -18,7 +18,7 @@ fn main() {
         for cmp_id in box_ids.iter().skip(idx + 1) {
             let (nb, result) = letter_in_common(base_id, cmp_id);
             if nb == 1 {
-                println!("{}", result);
+                answer!("{}", result);
             }
         }
     }

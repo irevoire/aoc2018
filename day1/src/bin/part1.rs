@@ -1,4 +1,6 @@
+use aoc::*;
+
 fn main() {
-    let res: i32 = aoc::parser::lines::<i32>().sum();
-    println!("result: {}", res);
+    let res: i32 = parser::lines::<i32>().sum();
+    answer!("result: {}", res);
 }

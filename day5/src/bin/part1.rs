@@ -5,7 +5,7 @@ fn main() {
     let polymer: String = parser::chars::<char>().collect();
     let polymer = react(polymer);
 
-    println!(
+    answer!(
         "After fully reacting the polymer, {} units remains.",
         polymer.len()
     );
