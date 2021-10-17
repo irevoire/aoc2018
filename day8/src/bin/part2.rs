@@ -8,7 +8,7 @@ fn main() {
         .collect();
 
     let tree = Node::parse(&data).0;
-    let sum = tree.sum();
+    let value = tree.value();
 
-    answer!("The sum of all metadata entries is {}.", sum);
+    answer!("The value of the root node is {}.", value);
 }
