@@ -48,19 +48,3 @@ fn main() {
         order
     );
 }
-
-pub fn unlock_all_steps(
-    available_steps: &mut Vec<char>,
-    done: char,
-    steps: &mut HashMap<char, Step>,
-) {
-    let keys: Vec<char> = steps.keys().copied().collect();
-    for key in keys {
-        let step = steps.get_mut(&key).unwrap();
-
-        if step.try_unlock(done) {
-            available_steps.binary_insert(key);
-            steps.remove(&key);
-        }
-    }
-}

@@ -1,5 +1,5 @@
 use aoc::*;
-use std::str::FromStr;
+use std::{collections::HashMap, str::FromStr};
 
 pub struct Dependency {
     pub step: char,
@@ -37,5 +37,21 @@ impl Step {
     pub fn try_unlock(&mut self, name: char) -> bool {
         self.depends_on.binary_remove(name);
         self.depends_on.is_empty()
+    }
+}
+
+pub fn unlock_all_steps(
+    available_steps: &mut Vec<char>,
+    done: char,
+    steps: &mut HashMap<char, Step>,
+) {
+    let keys: Vec<char> = steps.keys().copied().collect();
+    for key in keys {
+        let step = steps.get_mut(&key).unwrap();
+
+        if step.try_unlock(done) {
+            available_steps.binary_insert(key);
+            steps.remove(&key);
+        }
     }
 }
