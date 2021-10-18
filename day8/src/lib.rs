@@ -37,4 +37,19 @@ impl Node {
                 .sum()
         }
     }
+
+    // The following methods are not required for the advent of code, it's just for funzies
+
+    pub fn depth(&self) -> usize {
+        1 + self
+            .childs
+            .iter()
+            .map(|child| child.depth())
+            .max()
+            .unwrap_or_default()
+    }
+
+    pub fn size(&self) -> usize {
+        1 + self.childs.iter().map(|child| child.depth()).sum::<usize>()
+    }
 }
