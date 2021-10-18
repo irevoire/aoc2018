@@ -1,6 +1,6 @@
 pub struct Node {
-    childs: Vec<Node>,
-    metadata: Vec<usize>,
+    pub childs: Vec<Node>,
+    pub metadata: Vec<usize>,
 }
 
 impl Node {
