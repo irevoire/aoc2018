@@ -14,7 +14,7 @@ fn main() {
         let id = id + 1;
 
         grid.enumerate_mut().for_each(|(c, (i, d))| {
-            let distance = c.distance_from(coord);
+            let distance = c.manhattan_distance_from(coord);
             if distance < *d {
                 *i = id;
                 *d = distance;
